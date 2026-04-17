@@ -1,0 +1,7 @@
+Date,Company,Department,Region,Revenue,Expenses,Profit,Employees,Units_Sold,Customer_Satisfaction
+2026-01-01,TechNova,Sales,North,50000,32000,18000,45,1200,88
+2026-01-02,TechNova,Marketing,North,42000,28000,14000,30,950,84
+2026-01-03,TechNova,Support,North,30000,21000,9000,25,600,90
+2026-01-04,TechNova,Sales,South,47000,30000,17000,42,1100,87
+2026-01-05,TechNova,Marketing,South,39000,26000,13000,28,870,82
+2026-01-06,TechNova,Support,South,28000,20000,8000,23,540,91
