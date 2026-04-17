@@ -20,4 +20,4 @@ Plotly
 
 Run locally:
 
-streamlit run app.py
+streamlit run finance_pro.py
