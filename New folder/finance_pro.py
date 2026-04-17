@@ -4,7 +4,7 @@ import plotly.express as px
 
 st.set_page_config(page_title="Business Intelligence Dashboard", layout="wide")
 
-st.title("📊 Business Intelligence Dashboard")
+st.title(" Business Intelligence Dashboard")
 
 # Load Data
 df = pd.read_csv("company_data.csv")
@@ -12,9 +12,6 @@ df = pd.read_csv("company_data.csv")
 df["Date"] = pd.to_datetime(df["Date"])
 df["Month"] = df["Date"].dt.month
 
-# -------------------------
-# SIDEBAR FILTERS
-# -------------------------
 
 st.sidebar.header("Dashboard Filters")
 
@@ -32,9 +29,7 @@ department = st.sidebar.multiselect(
 
 df = df[(df["Region"].isin(region)) & (df["Department"].isin(department))]
 
-# -------------------------
 # KPI METRICS
-# -------------------------
 
 revenue = df["Revenue"].sum()
 expenses = df["Expenses"].sum()
@@ -50,9 +45,7 @@ c4.metric("📦 Units Sold", f"{units:,}")
 
 st.divider()
 
-# -------------------------
 # REVENUE TREND
-# -------------------------
 
 st.subheader("📈 Revenue Trend")
 
@@ -62,9 +55,7 @@ fig1 = px.line(trend, x="Date", y="Revenue", markers=True)
 
 st.plotly_chart(fig1, use_container_width=True)
 
-# -------------------------
 # REGION PERFORMANCE
-# -------------------------
 
 st.subheader("🌍 Revenue by Region")
 
@@ -74,9 +65,7 @@ fig2 = px.bar(region_data, x="Region", y="Revenue", color="Region")
 
 st.plotly_chart(fig2, use_container_width=True)
 
-# -------------------------
 # DEPARTMENT PERFORMANCE
-# -------------------------
 
 st.subheader("🏭 Department Performance")
 
@@ -86,9 +75,7 @@ fig3 = px.pie(dept_data, names="Department", values="Profit", hole=0.4)
 
 st.plotly_chart(fig3, use_container_width=True)
 
-# -------------------------
 # EMPLOYEE PRODUCTIVITY
-# -------------------------
 
 st.subheader("👥 Employee Productivity")
 
@@ -99,9 +86,7 @@ fig4 = px.bar(prod, x="Department", y="Revenue_per_Employee", color="Department"
 
 st.plotly_chart(fig4, use_container_width=True)
 
-# -------------------------
 # DATA TABLE
-# -------------------------
 
 st.subheader("📋 Company Data")
 
